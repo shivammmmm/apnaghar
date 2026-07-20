@@ -7,8 +7,8 @@ import StickyButtons from '@/components/StickyButtons';
 import SectionHeading from '@/components/SectionHeading';
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-  { icon: MessageCircle, label: "WhatsApp", value: "+91 98765 43210", href: "https://wa.me/919876543210" },
+  { icon: Phone, label: "Phone", value: "+91 70193 73679", href: "tel:+917019373679" },
+  { icon: MessageCircle, label: "WhatsApp", value: "+91 70193 73679", href: "https://wa.me/917019373679" },
   { icon: Mail, label: "Email", value: "info@apnagharloans.com", href: "mailto:info@apnagharloans.com" },
   { icon: MapPin, label: "Office", value: "123 Business Park, Main Street, Mumbai, Maharashtra 400001", href: null },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:30 AM – 6:30 PM", href: null }
@@ -27,7 +27,21 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await base44.entities.ContactInquiry.create(formData);
+      const messageText = `Hello Apna Ghar Loans, I have a Contact Inquiry:\n\n` +
+        `👤 *Name:* ${formData.name}\n` +
+        `📱 *Phone:* ${formData.phone}\n` +
+        `✉️ *Email:* ${formData.email}\n` +
+        `💬 *Message:* ${formData.message}`;
+
+      const whatsappUrl = `https://wa.me/917019373679?text=${encodeURIComponent(messageText)}`;
+      window.open(whatsappUrl, '_blank');
+
+      try {
+        await base44.entities.ContactInquiry.create(formData);
+      } catch (err) {
+        console.warn("Base44 log skipped", err);
+      }
+
       setSubmitted(true);
       setSubmitting(false);
     } catch (err) {

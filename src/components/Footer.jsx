@@ -55,9 +55,9 @@ export default function Footer() {
               Your trusted partner for home loan guidance. We help you compare multiple banking options and find the right solution for your dream home.
             </p>
             <div className="space-y-3">
-              <a href="tel:+919876543210" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+              <a href="tel:+917019373679" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                 <Phone className="w-4 h-4 text-white/40" />
-                +91 98765 43210
+                +91 70193 73679
               </a>
               <a href="mailto:info@apnagharloans.com" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                 <Mail className="w-4 h-4 text-white/40" />

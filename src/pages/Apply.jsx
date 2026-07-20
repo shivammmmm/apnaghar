@@ -49,10 +49,28 @@ export default function Apply() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      await base44.entities.Lead.create({
-        ...formData,
-        source: "application_form"
-      });
+      const message = `Hello Apna Ghar Loans, I request a Free Home Loan Consultation:\n\n` +
+        `👤 *Name:* ${formData.name}\n` +
+        `📱 *Mobile:* ${formData.mobile}\n` +
+        `📍 *City:* ${formData.city}\n` +
+        `🏦 *Loan Type:* ${formData.loan_type}\n` +
+        `💰 *Required Amount:* ₹${Number(formData.required_amount).toLocaleString("en-IN")}\n` +
+        `💵 *Monthly Income:* ₹${Number(formData.monthly_income).toLocaleString("en-IN")}\n` +
+        `💼 *Employment:* ${formData.employment_type}\n` +
+        `🏠 *Property Status:* ${formData.property_status}`;
+
+      const whatsappUrl = `https://wa.me/917019373679?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+
+      try {
+        await base44.entities.Lead.create({
+          ...formData,
+          source: "application_form"
+        });
+      } catch (err) {
+        console.warn("Base44 lead log skipped", err);
+      }
+
       setSubmitted(true);
       setSubmitting(false);
     } catch (err) {

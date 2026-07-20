@@ -89,7 +89,7 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+919876543210" className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all text-navy-700 hover:text-navy-900">
+            <a href="tel:+917019373679" className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all text-navy-700 hover:text-navy-900">
               <Phone className="w-4 h-4" />
               Call Us
             </a>

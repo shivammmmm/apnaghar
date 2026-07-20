@@ -30,7 +30,7 @@ export default function CTASection() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
-            href="tel:+919876543210"
+            href="tel:+917019373679"
             className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all"
           >
             <Phone className="w-4 h-4" />
