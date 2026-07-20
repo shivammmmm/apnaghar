@@ -60,14 +60,15 @@ export default function Blog() {
             <p className="text-navy-500 max-w-xl mx-auto">Expert tips, banking insights, and financial guides to help you navigate your home loan journey.</p>
           </div>
 
-          <div className="max-w-md mx-auto mb-10 relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-navy-400" />
+          <div className="max-w-md mx-auto mb-10 relative flex items-center">
+            <Search className="absolute left-4 w-5 h-5 text-navy-400 pointer-events-none z-10" />
             <input
               type="text"
               placeholder="Search articles..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none"
+              style={{ paddingLeft: '2.75rem' }}
+              className="w-full pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none bg-white shadow-sm"
             />
           </div>
 

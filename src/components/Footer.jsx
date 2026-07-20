@@ -44,11 +44,13 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           <div className="lg:col-span-2">
-            <img
-              src="https://media.base44.com/images/public/6a3cd351d9831a39cb1b5904/010004434_ApnaGHarProfile.png"
-              alt="Apna Ghar Loans"
-              className="h-14 w-auto object-contain mb-2 brightness-0 invert"
-            />
+            <div className="bg-white p-2.5 rounded-xl inline-block mb-4 shadow-sm">
+              <img
+                src="/logo.png"
+                alt="Apna Ghar Loans"
+                className="h-12 w-auto object-contain"
+              />
+            </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
               Your trusted partner for home loan guidance. We help you compare multiple banking options and find the right solution for your dream home.
             </p>

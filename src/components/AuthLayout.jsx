@@ -6,7 +6,9 @@ export default function AuthLayout({ children, title, subtitle }) {
       <div className="hidden md:flex md:w-1/2 bg-navy-900 text-white p-12 flex-col justify-between relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
         <div className="relative z-10">
-          <img src="https://media.base44.com/images/public/6a3cd351d9831a39cb1b5904/010004434_ApnaGHarProfile.png" alt="Apna Ghar Loans" className="h-12 w-auto object-contain brightness-0 invert mb-8" />
+          <div className="bg-white p-2 rounded-xl inline-block mb-8 shadow-sm">
+            <img src="/logo.png" alt="Apna Ghar Loans" className="h-10 w-auto object-contain" />
+          </div>
           <h2 className="font-heading text-4xl lg:text-5xl leading-tight text-white mb-6">Your Journey to Homeownership Starts Here</h2>
           <p className="text-white/70 max-w-md">Compare multiple banking partners, calculate EMIs, and secure tailored home loan solutions with expert guidance.</p>
         </div>

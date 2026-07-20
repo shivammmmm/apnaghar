@@ -16,7 +16,7 @@ const steps = [
 
 const loanTypes = ["Home Loan", "Balance Transfer", "Resale Property Loan", "Plot Loan", "Construction Loan", "Loan Against Property"];
 const employmentTypes = ["Salaried", "Self-Employed", "Professional", "Business Owner"];
-const propertyStatuses = ["Finalized", "Searching", "Resale", "Under Construction"];
+const propertyStatuses = ["Property Identified", "Searching for Property", "Ready to Move / Resale", "Under Construction"];
 
 export default function Apply() {
   const [step, setStep] = useState(1);

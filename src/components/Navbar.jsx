@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-2">
             <img
-              src="https://media.base44.com/images/public/6a3cd351d9831a39cb1b5904/010004434_ApnaGHarProfile.png"
+              src="/logo.png"
               alt="Apna Ghar Loans"
               className="h-10 sm:h-12 w-auto object-contain"
             />

@@ -92,34 +92,37 @@ export default function LeadPopup() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="relative">
-                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                    <div className="relative flex items-center">
+                      <User className="absolute left-3.5 w-4 h-4 text-navy-400 pointer-events-none z-10" />
                       <input
                         type="text"
                         required
                         placeholder="Your Full Name"
                         value={formData.name}
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none"
+                        style={{ paddingLeft: '2.5rem' }}
+                        className="w-full pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none"
                       />
                     </div>
-                    <div className="relative">
-                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                    <div className="relative flex items-center">
+                      <Phone className="absolute left-3.5 w-4 h-4 text-navy-400 pointer-events-none z-10" />
                       <input
                         type="tel"
                         required
                         placeholder="Mobile Number"
                         value={formData.mobile}
                         onChange={(e) => setFormData(prev => ({ ...prev, mobile: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none"
+                        style={{ paddingLeft: '2.5rem' }}
+                        className="w-full pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none"
                       />
                     </div>
-                    <div className="relative">
-                      <Building className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-navy-400" />
+                    <div className="relative flex items-center">
+                      <Building className="absolute left-3.5 w-4 h-4 text-navy-400 pointer-events-none z-10" />
                       <select
                         value={formData.loan_type}
                         onChange={(e) => setFormData(prev => ({ ...prev, loan_type: e.target.value }))}
-                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none bg-white text-navy-700"
+                        style={{ paddingLeft: '2.5rem' }}
+                        className="w-full pr-4 py-3 rounded-xl border border-navy-200 text-sm focus:ring-2 focus:ring-navy-600 focus:border-navy-600 outline-none bg-white text-navy-700"
                       >
                         <option value="">Select Loan Type (Optional)</option>
                         {loanTypes.map(type => (
