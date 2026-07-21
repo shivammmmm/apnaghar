@@ -25,11 +25,8 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { Icon: Facebook, href: "#" },
-  { Icon: Instagram, href: "#" },
-  { Icon: Twitter, href: "#" },
-  { Icon: Linkedin, href: "#" },
-  { Icon: Youtube, href: "#" }
+  { Icon: Instagram, href: "https://www.instagram.com/apnagharloans_11/", label: "Instagram" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/113934145/", label: "LinkedIn" }
 ];
 
 export default function Footer() {
@@ -55,9 +52,9 @@ export default function Footer() {
               Your trusted partner for home loan guidance. We help you compare multiple banking options and find the right solution for your dream home.
             </p>
             <div className="space-y-3">
-              <a href="tel:+917019373679" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
+              <a href="tel:+919606835118" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                 <Phone className="w-4 h-4 text-white/40" />
-                +91 70193 73679
+                +91 96068 35118
               </a>
               <a href="mailto:info@apnagharloans.com" className="flex items-center gap-3 text-sm text-white/70 hover:text-white transition-colors">
                 <Mail className="w-4 h-4 text-white/40" />
@@ -100,17 +97,18 @@ export default function Footer() {
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} Apna Ghar Loans. All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
-            {socialLinks.map(({ Icon, href }, idx) => (
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ Icon, href, label }) => (
               <a
-                key={idx}
+                key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors"
-                aria-label="Social link"
+                className="p-2.5 rounded-xl bg-white/5 hover:bg-white/15 hover:text-white transition-all text-white/60 flex items-center justify-center"
+                aria-label={label}
+                title={label}
               >
-                <Icon className="w-4 h-4 text-white/50" />
+                <Icon className="w-4 h-4" />
               </a>
             ))}
           </div>

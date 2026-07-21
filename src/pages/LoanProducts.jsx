@@ -11,42 +11,48 @@ const products = [
     icon: Home,
     title: "Home Loan",
     desc: "Purchase your dream home with competitive interest rates and flexible repayment options from leading banks.",
-    features: ["Competitive interest rates starting from 8.30% p.a.", "Tenure up to 30 years", "Up to 90% of property value", "Minimal documentation for salaried applicants", "Balance transfer facility available"]
+    features: ["Competitive interest rates starting from 8.30% p.a.", "Tenure up to 30 years", "Up to 90% of property value", "Minimal documentation for salaried applicants", "Balance transfer facility available"],
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "balance-transfer",
     icon: RefreshCw,
     title: "Balance Transfer",
     desc: "Transfer your existing home loan to a bank offering a lower interest rate and save significantly on your EMIs.",
-    features: ["Lower interest rates than your current loan", "Reduced monthly EMI", "Top-up loan facility available", "Seamless transfer process", "Significant savings over loan tenure"]
+    features: ["Lower interest rates than your current loan", "Reduced monthly EMI", "Top-up loan facility available", "Seamless transfer process", "Significant savings over loan tenure"],
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "resale",
     icon: Key,
     title: "Resale Property Loan",
     desc: "Get financing for pre-owned residential properties with streamlined documentation and faster processing.",
-    features: ["Finance for ready-to-move properties", "Quick property valuation", "Simplified legal verification", "Competitive rates for resale properties", "Guidance on property due diligence"]
+    features: ["Finance for ready-to-move properties", "Quick property valuation", "Simplified legal verification", "Competitive rates for resale properties", "Guidance on property due diligence"],
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "plot-loan",
     icon: Map,
     title: "Plot Loan",
     desc: "Secure funding to purchase residential plots in approved layouts and build your home from the ground up.",
-    features: ["Finance for residential plot purchase", "Approved layout and colony plots", "Construction loan linkage available", "Flexible repayment options", "Quick disbursement process"]
+    features: ["Finance for residential plot purchase", "Approved layout and colony plots", "Construction loan linkage available", "Flexible repayment options", "Quick disbursement process"],
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "construction-loan",
     icon: Hammer,
     title: "Construction Loan",
     desc: "Finance the construction of your home with stage-wise disbursement aligned to construction milestones.",
-    features: ["Stage-wise disbursement", "Interest only on disbursed amount", "Linked to plot loan available", "Construction monitoring support", "Flexible construction timeline"]
+    features: ["Stage-wise disbursement", "Interest only on disbursed amount", "Linked to plot loan available", "Construction monitoring support", "Flexible construction timeline"],
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "lap",
     icon: FileText,
     title: "Loan Against Property",
     desc: "Leverage your existing residential or commercial property to access funds for personal or business needs.",
-    features: ["Up to 60% of property market value", "Lower interest than personal loans", "Use for business expansion or personal needs", "Longer repayment tenure available", "Continue using your property"]
+    features: ["Up to 60% of property market value", "Lower interest than personal loans", "Use for business expansion or personal needs", "Longer repayment tenure available", "Continue using your property"],
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -93,8 +99,13 @@ export default function LoanProducts() {
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
-                  <div className={`bg-gradient-to-br from-navy-50 to-slate-50 rounded-2xl p-10 flex items-center justify-center ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
-                    <prod.icon className="w-24 h-24 text-navy-200" />
+                  <div className={`relative h-64 sm:h-80 rounded-2xl overflow-hidden group shadow-md ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
+                    <img
+                      src={prod.image}
+                      alt={prod.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900/30 via-transparent to-transparent" />
                   </div>
                 </div>
                 {idx < products.length - 1 && (

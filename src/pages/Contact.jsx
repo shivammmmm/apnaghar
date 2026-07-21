@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Loader2, CheckCircle2, Send } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Clock, Loader2, CheckCircle2, Send, Instagram, Linkedin } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,9 +7,11 @@ import StickyButtons from '@/components/StickyButtons';
 import SectionHeading from '@/components/SectionHeading';
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 70193 73679", href: "tel:+917019373679" },
-  { icon: MessageCircle, label: "WhatsApp", value: "+91 70193 73679", href: "https://wa.me/917019373679" },
+  { icon: Phone, label: "Phone", value: "+91 96068 35118", href: "tel:+919606835118" },
+  { icon: MessageCircle, label: "WhatsApp", value: "+91 96068 35118", href: "https://wa.me/919606835118" },
   { icon: Mail, label: "Email", value: "info@apnagharloans.com", href: "mailto:info@apnagharloans.com" },
+  { icon: Instagram, label: "Instagram", value: "@apnagharloans_11", href: "https://www.instagram.com/apnagharloans_11/" },
+  { icon: Linkedin, label: "LinkedIn", value: "Apna Ghar Loans", href: "https://www.linkedin.com/company/113934145/" },
   { icon: MapPin, label: "Office", value: "123 Business Park, Main Street, Mumbai, Maharashtra 400001", href: null },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:30 AM – 6:30 PM", href: null }
 ];
@@ -33,7 +35,7 @@ export default function Contact() {
         `✉️ *Email:* ${formData.email}\n` +
         `💬 *Message:* ${formData.message}`;
 
-      const whatsappUrl = `https://wa.me/917019373679?text=${encodeURIComponent(messageText)}`;
+      const whatsappUrl = `https://wa.me/919606835118?text=${encodeURIComponent(messageText)}`;
       window.open(whatsappUrl, '_blank');
 
       try {

@@ -59,7 +59,7 @@ export default function Apply() {
         `💼 *Employment:* ${formData.employment_type}\n` +
         `🏠 *Property Status:* ${formData.property_status}`;
 
-      const whatsappUrl = `https://wa.me/917019373679?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/919606835118?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
 
       try {

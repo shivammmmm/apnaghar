@@ -10,7 +10,8 @@ const products = [
     link: "/loans#home-loan",
     gradient: "from-blue-500 to-blue-700",
     light: "bg-blue-50",
-    iconColor: "text-blue-600"
+    iconColor: "text-blue-600",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: RefreshCw,
@@ -19,7 +20,8 @@ const products = [
     link: "/loans#balance-transfer",
     gradient: "from-sky-500 to-sky-700",
     light: "bg-sky-50",
-    iconColor: "text-sky-600"
+    iconColor: "text-sky-600",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: Key,
@@ -28,7 +30,8 @@ const products = [
     link: "/loans#resale",
     gradient: "from-violet-500 to-violet-700",
     light: "bg-violet-50",
-    iconColor: "text-violet-600"
+    iconColor: "text-violet-600",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: Map,
@@ -37,7 +40,8 @@ const products = [
     link: "/loans#plot-loan",
     gradient: "from-emerald-500 to-emerald-700",
     light: "bg-emerald-50",
-    iconColor: "text-emerald-600"
+    iconColor: "text-emerald-600",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: Hammer,
@@ -46,7 +50,8 @@ const products = [
     link: "/loans#construction-loan",
     gradient: "from-amber-500 to-amber-700",
     light: "bg-amber-50",
-    iconColor: "text-amber-600"
+    iconColor: "text-amber-600",
+    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=600&q=80"
   },
   {
     icon: FileText,
@@ -55,7 +60,8 @@ const products = [
     link: "/loans#lap",
     gradient: "from-rose-500 to-rose-700",
     light: "bg-rose-50",
-    iconColor: "text-rose-600"
+    iconColor: "text-rose-600",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
   }
 ];
 
@@ -73,22 +79,34 @@ export default function LoanProducts() {
           {products.map((prod) => (
             <div
               key={prod.title}
-              className="bg-white rounded-3xl border border-navy-100/50 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white rounded-3xl border border-navy-100/50 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 ${prod.light}`}>
-                  <prod.icon className={`w-6 h-6 ${prod.iconColor}`} />
+                <div className="relative h-44 w-full overflow-hidden">
+                  <img
+                    src={prod.image}
+                    alt={prod.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
+                  <div className={`absolute bottom-3 left-6 w-10 h-10 rounded-xl flex items-center justify-center shadow-md ${prod.light}`}>
+                    <prod.icon className={`w-5 h-5 ${prod.iconColor}`} />
+                  </div>
                 </div>
-                <h3 className="font-heading text-2xl text-navy-900 mb-3">{prod.title}</h3>
-                <p className="text-sm text-navy-500 leading-relaxed mb-6">{prod.desc}</p>
+                <div className="p-6">
+                  <h3 className="font-heading text-2xl text-navy-900 mb-3">{prod.title}</h3>
+                  <p className="text-sm text-navy-500 leading-relaxed">{prod.desc}</p>
+                </div>
               </div>
-              <Link
-                to={prod.link}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:text-navy-900 transition-colors group"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="px-6 pb-6 pt-2">
+                <Link
+                  to={prod.link}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:text-navy-900 transition-colors"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           ))}
         </div>

@@ -43,7 +43,7 @@ export default function LeadPopup() {
         `📱 *Mobile:* ${formData.mobile}` +
         (formData.loan_type ? `\n🏦 *Loan Type:* ${formData.loan_type}` : "");
 
-      const whatsappUrl = `https://wa.me/917019373679?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/919606835118?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
 
       try {
