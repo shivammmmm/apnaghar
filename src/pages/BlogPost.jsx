@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowLeft, Loader2, ArrowRight } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { defaultPosts } from '@/utils/defaultBlogPosts';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import StickyButtons from '@/components/StickyButtons';
@@ -18,7 +19,7 @@ export default function BlogPost() {
       setLoading(true);
       try {
         const postsData = await base44.entities.BlogPost.filter({ slug, status: "published" });
-        if (postsData.length > 0) {
+        if (postsData && postsData.length > 0) {
           const currentPost = postsData[0];
           setPost(currentPost);
           
@@ -29,10 +30,23 @@ export default function BlogPost() {
           );
           setRelated(relatedData.filter(item => item.id !== currentPost.id).slice(0, 3));
         } else {
-          setPost(null);
+          const fallbackPost = defaultPosts.find(p => p.slug === slug);
+          if (fallbackPost) {
+            setPost(fallbackPost);
+            setRelated(defaultPosts.filter(p => p.slug !== slug && p.category === fallbackPost.category).slice(0, 3));
+          } else {
+            setPost(null);
+          }
         }
       } catch (err) {
-        console.error(err);
+        console.warn("Base44 fetch error, using default posts", err);
+        const fallbackPost = defaultPosts.find(p => p.slug === slug);
+        if (fallbackPost) {
+          setPost(fallbackPost);
+          setRelated(defaultPosts.filter(p => p.slug !== slug && p.category === fallbackPost.category).slice(0, 3));
+        } else {
+          setPost(null);
+        }
       }
       setLoading(false);
     };

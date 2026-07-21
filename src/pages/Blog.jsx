@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, Calendar, User, ArrowRight, Loader2 } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
+import { defaultPosts } from '@/utils/defaultBlogPosts';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import StickyButtons from '@/components/StickyButtons';
@@ -20,9 +21,14 @@ export default function Blog() {
       setLoading(true);
       try {
         const data = await base44.entities.BlogPost.filter({ status: "published" }, "-created_date");
-        setPosts(data);
+        if (data && data.length > 0) {
+          setPosts(data);
+        } else {
+          setPosts(defaultPosts);
+        }
       } catch (err) {
-        console.error(err);
+        console.warn("Base44 fetch skipped, using default posts", err);
+        setPosts(defaultPosts);
       }
       setLoading(false);
     };
