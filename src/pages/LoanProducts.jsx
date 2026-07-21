@@ -1,4 +1,4 @@
-import { Home, RefreshCw, Key, Map, Hammer, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Home, ArrowLeftRight, KeyRound, Landmark, HardHat, Building2, CheckCircle2, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import StickyButtons from '@/components/StickyButtons';
@@ -12,27 +12,27 @@ const products = [
     title: "Home Loan",
     desc: "Purchase your dream home with competitive interest rates and flexible repayment options from leading banks.",
     features: ["Competitive interest rates starting from 8.30% p.a.", "Tenure up to 30 years", "Up to 90% of property value", "Minimal documentation for salaried applicants", "Balance transfer facility available"],
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "balance-transfer",
-    icon: RefreshCw,
+    icon: ArrowLeftRight,
     title: "Balance Transfer",
     desc: "Transfer your existing home loan to a bank offering a lower interest rate and save significantly on your EMIs.",
     features: ["Lower interest rates than your current loan", "Reduced monthly EMI", "Top-up loan facility available", "Seamless transfer process", "Significant savings over loan tenure"],
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "resale",
-    icon: Key,
+    icon: KeyRound,
     title: "Resale Property Loan",
     desc: "Get financing for pre-owned residential properties with streamlined documentation and faster processing.",
     features: ["Finance for ready-to-move properties", "Quick property valuation", "Simplified legal verification", "Competitive rates for resale properties", "Guidance on property due diligence"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "plot-loan",
-    icon: Map,
+    icon: Landmark,
     title: "Plot Loan",
     desc: "Secure funding to purchase residential plots in approved layouts and build your home from the ground up.",
     features: ["Finance for residential plot purchase", "Approved layout and colony plots", "Construction loan linkage available", "Flexible repayment options", "Quick disbursement process"],
@@ -40,15 +40,15 @@ const products = [
   },
   {
     id: "construction-loan",
-    icon: Hammer,
+    icon: HardHat,
     title: "Construction Loan",
     desc: "Finance the construction of your home with stage-wise disbursement aligned to construction milestones.",
     features: ["Stage-wise disbursement", "Interest only on disbursed amount", "Linked to plot loan available", "Construction monitoring support", "Flexible construction timeline"],
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "lap",
-    icon: FileText,
+    icon: Building2,
     title: "Loan Against Property",
     desc: "Leverage your existing residential or commercial property to access funds for personal or business needs.",
     features: ["Up to 60% of property market value", "Lower interest than personal loans", "Use for business expansion or personal needs", "Longer repayment tenure available", "Continue using your property"],

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Phone, Menu, X } from 'lucide-react';
+import { ChevronDown, Phone, Menu, X, Instagram, Linkedin } from 'lucide-react';
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -40,7 +40,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-navy-100" : "bg-transparent"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-navy-100" : "bg-white/80 backdrop-blur-md border-b border-navy-50"}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link to="/" className="flex items-center gap-2">
@@ -89,8 +89,31 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
+            <div className="flex items-center gap-1 pr-2 border-r border-navy-200">
+              <a
+                href="https://www.instagram.com/apnagharloans_11/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-navy-600 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/113934145/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-navy-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+
             <a href="tel:+919606835118" className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all text-navy-700 hover:text-navy-900">
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-navy-900" />
               Call Us
             </a>
             <Link to="/apply" className="px-6 py-2.5 bg-navy-900 text-white text-sm font-semibold rounded-lg hover:bg-navy-800 transition-all shadow-md hover:shadow-lg">
@@ -140,7 +163,30 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <div className="pt-4 border-t border-navy-100">
+
+              <div className="flex items-center justify-center gap-4 py-3 border-t border-navy-100">
+                <a
+                  href="https://www.instagram.com/apnagharloans_11/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-rose-600"
+                >
+                  <Instagram className="w-4 h-4 text-rose-600" />
+                  Instagram
+                </a>
+                <span className="text-navy-200">|</span>
+                <a
+                  href="https://www.linkedin.com/company/113934145/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-blue-600"
+                >
+                  <Linkedin className="w-4 h-4 text-blue-600" />
+                  LinkedIn
+                </a>
+              </div>
+
+              <div className="pt-2 border-t border-navy-100">
                 <Link
                   to="/apply"
                   className="block w-full text-center px-6 py-3 bg-navy-900 text-white font-semibold rounded-lg"
