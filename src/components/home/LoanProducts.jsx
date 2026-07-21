@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeftRight, KeyRound, Landmark, HardHat, Building2, ArrowRight } from 'lucide-react';
+import { Home, ArrowLeftRight, KeyRound, MapPin, HardHat, ShieldCheck, ArrowRight } from 'lucide-react';
 import SectionHeading from '../SectionHeading';
 
 const products = [
@@ -8,9 +8,9 @@ const products = [
     title: "Home Loan",
     desc: "Purchase your dream home with competitive interest rates and flexible repayment options tailored to your needs.",
     link: "/loans#home-loan",
-    gradient: "from-blue-500 to-blue-700",
-    light: "bg-blue-50",
-    iconColor: "text-blue-600",
+    gradient: "from-emerald-500 to-emerald-700",
+    light: "bg-emerald-50 border border-emerald-100",
+    iconColor: "text-emerald-600",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -19,7 +19,7 @@ const products = [
     desc: "Transfer your existing home loan to reduce your interest burden and save on monthly EMIs.",
     link: "/loans#balance-transfer",
     gradient: "from-sky-500 to-sky-700",
-    light: "bg-sky-50",
+    light: "bg-sky-50 border border-sky-100",
     iconColor: "text-sky-600",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80"
   },
@@ -29,18 +29,18 @@ const products = [
     desc: "Get financing for pre-owned properties with streamlined documentation and quick processing.",
     link: "/loans#resale",
     gradient: "from-violet-500 to-violet-700",
-    light: "bg-violet-50",
+    light: "bg-violet-50 border border-violet-100",
     iconColor: "text-violet-600",
     image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=600&q=80"
   },
   {
-    icon: Landmark,
+    icon: MapPin,
     title: "Plot Loan",
     desc: "Secure funding to purchase land for your dream home with customized terms.",
     link: "/loans#plot-loan",
-    gradient: "from-emerald-500 to-emerald-700",
-    light: "bg-emerald-50",
-    iconColor: "text-emerald-600",
+    gradient: "from-amber-500 to-amber-700",
+    light: "bg-amber-50 border border-amber-100",
+    iconColor: "text-amber-600",
     image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80"
   },
   {
@@ -48,18 +48,18 @@ const products = [
     title: "Construction Loan",
     desc: "Build your dream home on your owned plot with stage-wise disbursement linked to construction progress.",
     link: "/loans#construction-loan",
-    gradient: "from-amber-500 to-amber-700",
-    light: "bg-amber-50",
-    iconColor: "text-amber-600",
+    gradient: "from-orange-500 to-orange-700",
+    light: "bg-orange-50 border border-orange-100",
+    iconColor: "text-orange-600",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
   },
   {
-    icon: Building2,
+    icon: ShieldCheck,
     title: "Loan Against Property",
     desc: "Unlock the value of your property for business expansion, child education, or other personal financial requirements.",
     link: "/loans#lap",
     gradient: "from-rose-500 to-rose-700",
-    light: "bg-rose-50",
+    light: "bg-rose-50 border border-rose-100",
     iconColor: "text-rose-600",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
   }
