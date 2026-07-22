@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MessageCircle, Mail, MapPin, Clock, Loader2, CheckCircle2, Send, Instagram, Linkedin } from 'lucide-react';
+import { Phone, MessageCircle, Mail, MapPin, Clock, Loader2, CheckCircle2, Send, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -10,6 +10,7 @@ const contactInfo = [
   { icon: Phone, label: "Phone", value: "+91 96068 35118", href: "tel:+919606835118" },
   { icon: MessageCircle, label: "WhatsApp", value: "+91 96068 35118", href: "https://wa.me/919606835118" },
   { icon: Mail, label: "Email", value: "info@apnagharloans.com", href: "mailto:info@apnagharloans.com" },
+  { icon: Facebook, label: "Facebook", value: "Apna Ghar Loans", href: "https://www.facebook.com/share/18pkwentWe/" },
   { icon: Instagram, label: "Instagram", value: "@apnagharloans_11", href: "https://www.instagram.com/apnagharloans_11/" },
   { icon: Linkedin, label: "LinkedIn", value: "Apna Ghar Loans", href: "https://www.linkedin.com/company/113934145/" },
   { icon: MapPin, label: "Office", value: "Flat-K-102, Block-Avon, Floor-1, Hamilton Homes by SJR Primecorp, Gattahalli Village, Sarjapura, Bangalore, Karnataka 560099", href: null },

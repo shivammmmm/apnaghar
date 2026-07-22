@@ -25,6 +25,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
+  { Icon: Facebook, href: "https://www.facebook.com/share/18pkwentWe/", label: "Facebook" },
   { Icon: Instagram, href: "https://www.instagram.com/apnagharloans_11/", label: "Instagram" },
   { Icon: Linkedin, href: "https://www.linkedin.com/company/113934145/", label: "LinkedIn" }
 ];

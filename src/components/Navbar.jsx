@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Phone, Menu, X, Instagram, Linkedin } from 'lucide-react';
+import { ChevronDown, Phone, Menu, X, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -91,6 +91,16 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <div className="flex items-center gap-1 pr-2 border-r border-navy-200">
               <a
+                href="https://www.facebook.com/share/18pkwentWe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-navy-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                aria-label="Facebook"
+                title="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
                 href="https://www.instagram.com/apnagharloans_11/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -164,7 +174,17 @@ export default function Navbar() {
                 </div>
               ))}
 
-              <div className="flex items-center justify-center gap-4 py-3 border-t border-navy-100">
+              <div className="flex items-center justify-center gap-4 py-3 border-t border-navy-100 flex-wrap">
+                <a
+                  href="https://www.facebook.com/share/18pkwentWe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-blue-600"
+                >
+                  <Facebook className="w-4 h-4 text-blue-600" />
+                  Facebook
+                </a>
+                <span className="text-navy-200">|</span>
                 <a
                   href="https://www.instagram.com/apnagharloans_11/"
                   target="_blank"
