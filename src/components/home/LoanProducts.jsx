@@ -1,107 +1,94 @@
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeftRight, KeyRound, MapPin, HardHat, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SectionHeading from '../SectionHeading';
 
 const products = [
   {
-    icon: Home,
     title: "Home Loan",
-    desc: "Purchase your dream home with competitive interest rates and flexible repayment options tailored to your needs.",
+    desc: "Make your dream home a reality with our competitive home loans.",
     link: "/loans#home-loan",
-    gradient: "from-emerald-500 to-emerald-700",
-    light: "bg-emerald-50 border border-emerald-100",
-    iconColor: "text-emerald-600",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+    image: "/images/loans/home-loan.png"
   },
   {
-    icon: ArrowLeftRight,
     title: "Balance Transfer",
-    desc: "Transfer your existing home loan to reduce your interest burden and save on monthly EMIs.",
+    desc: "Transfer your existing home loan to us and enjoy lower interest rates.",
     link: "/loans#balance-transfer",
-    gradient: "from-sky-500 to-sky-700",
-    light: "bg-sky-50 border border-sky-100",
-    iconColor: "text-sky-600",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80"
+    image: "/images/loans/balance-transfer.png"
   },
   {
-    icon: KeyRound,
-    title: "Resale Property Loan",
-    desc: "Get financing for pre-owned properties with streamlined documentation and quick processing.",
-    link: "/loans#resale",
-    gradient: "from-violet-500 to-violet-700",
-    light: "bg-violet-50 border border-violet-100",
-    iconColor: "text-violet-600",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    icon: MapPin,
-    title: "Plot Loan",
-    desc: "Secure funding to purchase land for your dream home with customized terms.",
-    link: "/loans#plot-loan",
-    gradient: "from-amber-500 to-amber-700",
-    light: "bg-amber-50 border border-amber-100",
-    iconColor: "text-amber-600",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    icon: HardHat,
     title: "Construction Loan",
-    desc: "Build your dream home on your owned plot with stage-wise disbursement linked to construction progress.",
+    desc: "Finance the construction of your dream home with ease.",
     link: "/loans#construction-loan",
-    gradient: "from-orange-500 to-orange-700",
-    light: "bg-orange-50 border border-orange-100",
-    iconColor: "text-orange-600",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80"
+    image: "/images/loans/construction-loan.png"
   },
   {
-    icon: ShieldCheck,
+    title: "Plot Loan",
+    desc: "Buy your dream plot and build your future.",
+    link: "/loans#plot-loan",
+    image: "/images/loans/plot-loan.png"
+  },
+  {
     title: "Loan Against Property",
-    desc: "Unlock the value of your property for business expansion, child education, or other personal financial requirements.",
-    link: "/loans#lap",
-    gradient: "from-rose-500 to-rose-700",
-    light: "bg-rose-50 border border-rose-100",
-    iconColor: "text-rose-600",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
+    desc: "Unlock the value of your property to meet your financial needs.",
+    link: "/loans#loan-against-property",
+    image: "/images/loans/loan-against-property.png"
+  },
+  {
+    title: "Top-Up Loan",
+    desc: "Get additional funds on your existing home loan.",
+    link: "/loans#top-up-loan",
+    image: "/images/loans/top-up-loan.png"
+  },
+  {
+    title: "Home Renovation Loan",
+    desc: "Renovate your home and give it a new look with our loans.",
+    link: "/loans#home-renovation-loan",
+    image: "/images/loans/home-renovation-loan.png"
+  },
+  {
+    title: "Reverse Mortgage Loan",
+    desc: "Secure your retirement with steady income from your property.",
+    link: "/loans#reverse-mortgage-loan",
+    image: "/images/loans/reverse-mortgage-loan.png"
   }
 ];
 
 export default function LoanProducts() {
   return (
-    <section className="py-20 md:py-28 bg-slate-50/50">
+    <section className="py-20 md:py-28 bg-slate-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          label="Loan Products"
-          title="Home Loan Solutions"
-          subtitle="Explore our range of home loan products designed to meet different homeownership requirements."
+          label="OUR LOAN PRODUCTS"
+          title="Explore Our Wide Range of Loan Products"
+          subtitle="Tailored loan solutions to help you achieve your dreams"
         />
+        
+        {/* Blue decorative line from the design */}
+        <div className="text-center -mt-8 mb-16">
+          <div className="w-12 h-1 bg-blue-600 mx-auto rounded-full" />
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((prod) => (
             <div
               key={prod.title}
-              className="bg-white rounded-3xl border border-navy-100/50 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-3xl border border-slate-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between items-center text-center group"
             >
-              <div>
-                <div className="relative h-44 w-full overflow-hidden">
+              <div className="w-full flex flex-col items-center">
+                <div className="mb-6 flex items-center justify-center h-[140px] w-[140px]">
                   <img
                     src={prod.image}
                     alt={prod.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent" />
-                  <div className={`absolute bottom-3 left-6 w-10 h-10 rounded-xl flex items-center justify-center shadow-md ${prod.light}`}>
-                    <prod.icon className={`w-5 h-5 ${prod.iconColor}`} />
-                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-2xl text-navy-900 mb-3">{prod.title}</h3>
-                  <p className="text-sm text-navy-500 leading-relaxed">{prod.desc}</p>
-                </div>
+                <h3 className="font-heading text-2xl text-navy-900 mb-3 font-semibold">{prod.title}</h3>
+                <p className="text-sm text-navy-500/80 leading-relaxed mb-6 max-w-[240px] mx-auto">{prod.desc}</p>
               </div>
-              <div className="px-6 pb-6 pt-2">
+              <div className="pt-2">
                 <Link
                   to={prod.link}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-navy-700 hover:text-navy-900 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -114,3 +101,4 @@ export default function LoanProducts() {
     </section>
   );
 }
+

@@ -11,26 +11,27 @@ import StickyButtons from '@/components/StickyButtons';
 const categories = ["All", "Home Buying", "Home Loans", "Refinancing", "Financial Planning"];
 
 export default function Blog() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState(defaultPosts);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
       try {
-        const data = await base44.entities.BlogPost.filter({ status: "published" }, "-created_date");
-        if (data && data.length > 0) {
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("Timeout")), 2500)
+        );
+        const data = await Promise.race([
+          base44.entities.BlogPost.filter({ status: "published" }, "-created_date"),
+          timeoutPromise
+        ]);
+        if (Array.isArray(data) && data.length > 0) {
           setPosts(data);
-        } else {
-          setPosts(defaultPosts);
         }
       } catch (err) {
-        console.warn("Base44 fetch skipped, using default posts", err);
-        setPosts(defaultPosts);
+        console.warn("Base44 fetch skipped/timed out, using default posts", err);
       }
-      setLoading(false);
     };
     fetchPosts();
   }, []);

@@ -14,7 +14,16 @@ const steps = [
   { id: 4, label: "Review", icon: CheckCircle }
 ];
 
-const loanTypes = ["Home Loan", "Balance Transfer", "Resale Property Loan", "Plot Loan", "Construction Loan", "Loan Against Property"];
+const loanTypes = [
+  "Home Loan",
+  "Balance Transfer",
+  "Construction Loan",
+  "Plot Loan",
+  "Loan Against Property",
+  "Top-Up Loan",
+  "Home Renovation Loan",
+  "Reverse Mortgage Loan"
+];
 const employmentTypes = ["Salaried", "Self-Employed", "Professional", "Business Owner"];
 const propertyStatuses = ["Property Identified", "Searching for Property", "Ready to Move / Resale", "Under Construction"];
 

@@ -8,10 +8,10 @@ import SectionHeading from '../SectionHeading';
 const presets = [
   { label: "Home Loan", amount: 3e6 },
   { label: "Balance Transfer", amount: 25e5 },
-  { label: "Resale Property", amount: 2e6 },
   { label: "Plot Loan", amount: 15e5 },
   { label: "Construction", amount: 4e6 },
-  { label: "Loan Against Property", amount: 5e6 }
+  { label: "Loan Against Property", amount: 5e6 },
+  { label: "Top-Up Loan", amount: 10e5 }
 ];
 
 export default function EMICalculatorSection() {

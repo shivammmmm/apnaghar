@@ -10,45 +10,50 @@ import StickyButtons from '@/components/StickyButtons';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [related, setRelated] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const initialPost = defaultPosts.find(p => p.slug === slug) || null;
+  const initialRelated = initialPost
+    ? defaultPosts.filter(p => p.slug !== slug && p.category === initialPost.category).slice(0, 3)
+    : [];
+
+  const [post, setPost] = useState(initialPost);
+  const [related, setRelated] = useState(initialRelated);
+  const [loading, setLoading] = useState(!initialPost);
 
   useEffect(() => {
     const fetchPost = async () => {
-      setLoading(true);
       try {
-        const postsData = await base44.entities.BlogPost.filter({ slug, status: "published" });
-        if (postsData && postsData.length > 0) {
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("Timeout")), 2500)
+        );
+        const postsData = await Promise.race([
+          base44.entities.BlogPost.filter({ slug, status: "published" }),
+          timeoutPromise
+        ]);
+        if (Array.isArray(postsData) && postsData.length > 0) {
           const currentPost = postsData[0];
           setPost(currentPost);
           
-          const relatedData = await base44.entities.BlogPost.filter(
-            { category: currentPost.category, status: "published" },
-            "-created_date",
-            4
-          );
-          setRelated(relatedData.filter(item => item.id !== currentPost.id).slice(0, 3));
-        } else {
-          const fallbackPost = defaultPosts.find(p => p.slug === slug);
-          if (fallbackPost) {
-            setPost(fallbackPost);
-            setRelated(defaultPosts.filter(p => p.slug !== slug && p.category === fallbackPost.category).slice(0, 3));
-          } else {
-            setPost(null);
+          try {
+            const relatedData = await Promise.race([
+              base44.entities.BlogPost.filter(
+                { category: currentPost.category, status: "published" },
+                "-created_date",
+                4
+              ),
+              timeoutPromise
+            ]);
+            if (Array.isArray(relatedData) && relatedData.length > 0) {
+              setRelated(relatedData.filter(item => item.id !== currentPost.id).slice(0, 3));
+            }
+          } catch (e) {
+            // keep initial related
           }
         }
       } catch (err) {
-        console.warn("Base44 fetch error, using default posts", err);
-        const fallbackPost = defaultPosts.find(p => p.slug === slug);
-        if (fallbackPost) {
-          setPost(fallbackPost);
-          setRelated(defaultPosts.filter(p => p.slug !== slug && p.category === fallbackPost.category).slice(0, 3));
-        } else {
-          setPost(null);
-        }
+        console.warn("Base44 fetch error/timeout, using default posts", err);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
     fetchPost();
   }, [slug]);

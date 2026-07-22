@@ -12,7 +12,7 @@ const contactInfo = [
   { icon: Mail, label: "Email", value: "info@apnagharloans.com", href: "mailto:info@apnagharloans.com" },
   { icon: Instagram, label: "Instagram", value: "@apnagharloans_11", href: "https://www.instagram.com/apnagharloans_11/" },
   { icon: Linkedin, label: "LinkedIn", value: "Apna Ghar Loans", href: "https://www.linkedin.com/company/113934145/" },
-  { icon: MapPin, label: "Office", value: "123 Business Park, Main Street, Mumbai, Maharashtra 400001", href: null },
+  { icon: MapPin, label: "Office", value: "Flat-K-102, Block-Avon, Floor-1, Hamilton Homes by SJR Primecorp, Gattahalli Village, Sarjapura, Bangalore, Karnataka 560099", href: null },
   { icon: Clock, label: "Hours", value: "Mon – Sat: 9:30 AM – 6:30 PM", href: null }
 ];
 
@@ -99,7 +99,7 @@ export default function Contact() {
               <div className="bg-slate-100 rounded-2xl overflow-hidden h-64">
                 <iframe
                   title="Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995!3d19.08219865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.1450284535316!2d77.6749007750731!3d12.89736858742517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae134c679a9415%3A0x7d25e0c51d965715!2sSJR%20Hamilton%20Homes!5e0!3m2!1sen!2sin!4v1721645340000!5m2!1sen!2sin"
                   className="w-full h-full border-0"
                   allowFullScreen={true}
                   loading="lazy"

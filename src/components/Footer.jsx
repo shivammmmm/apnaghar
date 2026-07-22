@@ -62,7 +62,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 text-white/40 mt-0.5 shrink-0" />
-                <span>123 Business Park, Main Street,<br />Mumbai, Maharashtra 400001</span>
+                <span>Flat-K-102, Block-Avon, Floor-1,<br />Hamilton Homes by SJR Primecorp,<br />Gattahalli Village, Sarjapura,<br />Bangalore, Karnataka 560099</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-white/70">
                 <Clock className="w-4 h-4 text-white/40" />
